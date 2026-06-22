@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 稳定入口与页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f6fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1a2e3b;
+      line-height: 1.6;
+      padding: 0 1.25rem;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      background: linear-gradient(145deg, #e4f2f5 0%, #d5e9ee 100%);
+      border-radius: 2rem;
+      padding: 3.2rem 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 8px 24px rgba(42, 115, 124, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0d3b44;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text .sub {
+      font-size: 1.1rem;
+      color: #2b5b68;
+      background: rgba(255, 255, 255, 0.65);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      color: #1f4a56;
+      max-width: 480px;
+      margin-top: 0.4rem;
+    }
+
+    .hero-badge {
+      flex: 0 0 auto;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      padding: 1.2rem 1.8rem;
+      border-radius: 48px;
+      border: 1px solid #a3cdd6;
+      font-weight: 500;
+      color: #0e4957;
+      box-shadow: 0 2px 8px rgba(30, 80, 90, 0.08);
+    }
+
+    .hero-badge span {
+      background: #207582;
+      color: white;
+      border-radius: 24px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    /* ---------- 卡片网格 ---------- */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #12424e;
+      border-left: 5px solid #2d96a6;
+      padding-left: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(0, 50, 60, 0.04);
+      border: 1px solid #dfeff2;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #8cc9d4;
+      box-shadow: 0 8px 18px rgba(42, 115, 124, 0.08);
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #12424e;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #3a5e6a;
+    }
+
+    /* ---------- 说明区 ---------- */
+    .explain-wrap {
+      background: #eaf3f6;
+      border-radius: 1.8rem;
+      padding: 2.2rem 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .explain-wrap h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0c3b45;
+      margin-bottom: 1rem;
+    }
+
+    .explain-wrap p {
+      margin-bottom: 0.8rem;
+      color: #1b4b58;
+    }
+
+    .explain-wrap ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+    }
+
+    .explain-wrap ul li {
+      background: #d3e7ec;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #12424e;
+    }
+
+    .tag-bluegreen {
+      background: #207582;
+      color: white;
+    }
+
+    /* ---------- faq摘要 ---------- */
+    .faq-summary {
+      margin: 2.8rem 0 1.8rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #12424e;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 1rem;
+      padding: 0.9rem 1.3rem;
+      margin-bottom: 0.6rem;
+      border-left: 3px solid #58adb9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .faq-item strong {
+      color: #0e4957;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-item span {
+      color: #386e7b;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- 底部链接 ---------- */
+    .footer-links {
+      border-top: 1px solid #c9dee3;
+      padding-top: 2rem;
+      margin-top: 2.2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #2f606e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.2rem;
+    }
+
+    .footer-links a {
+      color: #156c7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #8fb9c2;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #207582;
+      color: #0a444f;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 680px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-badge {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        font-size: 1.25rem;
+      }
+      .explain-wrap {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      body {
+        padding: 0 0.8rem;
+      }
+      .hero {
+        padding: 1.5rem 1rem;
+        border-radius: 1.2rem;
+      }
+      .hero-text h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>开云 · 稳定入口</h1>
+      <div class="sub">页面使用说明</div>
+      <p>本页是围绕 <a href="https://zh-site-kaaiyun.com" style="color:#0f5e6d; font-weight:600; text-decoration:underline; text-underline-offset:3px;">开云</a> 整理的介绍与常见问题摘要，内容保持真实、清晰，方便新朋友快速了解基本信息。</p>
+    </div>
+    <div class="hero-badge">
+      页面说明 <span>v1</span>
+    </div>
+  </section>
+
+  <!-- 优势区：网格卡片 -->
+  <h2 class="section-title">优势 · 特点</h2>
+  <div class="grid-cards">
+    <div class="card">
+      <div class="icon">🧭</div>
+      <h3>明确入口</h3>
+      <p>直接提供指向 <a href="https://zh-site-kaaiyun.com" style="color:#156c7a; font-weight:500;">开云</a> 的稳定链接，省去反复查找的步骤。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📋</div>
+      <h3>页面说明</h3>
+      <p>每个模块都附有简要解释，让访问者清楚当前页面的内容与用途。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔄</div>
+      <h3>结构清晰</h3>
+      <p>从 hero 到 FAQ，采用卡片网格与分区排版，信息层级一目了然。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>移动优先</h3>
+      <p>响应式设计确保手机、平板与桌面都能获得一致的浏览体验。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 -->
+  <div class="explain-wrap">
+    <h2>关于本页的说明</h2>
+    <p>此页面为 <strong>开云</strong> 的介绍落地页，主要聚焦于稳定入口与页面内容说明。所有文字均基于实际功能整理，不包含夸大表述或诱导性文案。</p>
+    <p>页面中出现的链接均指向 <a href="https://zh-site-kaaiyun.com" style="color:#0f5e6d; font-weight:500;">开云</a>，可直接使用。建议将本页加入书签，作为日后访问的固定参考点。</p>
+    <ul>
+      <li>🌱 内容定期复核</li>
+      <li>🔗 链接保持有效</li>
+      <li class="tag-bluegreen">📌 推荐使用现代浏览器</li>
+    </ul>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+      <strong>❓ 开云是什么？</strong>
+      <span>一个可供参考的信息站点，本页仅提供其入口与相关说明。具体内容以实际页面为准。</span>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 如何确保入口稳定？</strong>
+      <span>直接使用本页提供的 <a href="https://zh-site-kaaiyun.com" style="color:#156c7a;">开云</a> 链接，无需额外跳转。如遇访问问题，建议检查网络环境。</span>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 本页会更新吗？</strong>
+      <span>页面结构、说明内容会定期做小幅调整，以保证信息准确。但不会频繁变动。</span>
+    </div>
+  </div>
+
+  <!-- 底部链接（包含开云） -->
+  <div class="footer-links">
+    <span>© 介绍页</span>
+    <a href="https://zh-site-kaaiyun.com">开云</a>
+    <span>·</span>
+    <a href="#">页面说明</a>
+    <span>·</span>
+    <a href="#">常见问题</a>
+    <span>·</span>
+    <span style="color:#6d929e;">稳定入口 v1</span>
+  </div>
+
+</div>
+</body>
+</html>
